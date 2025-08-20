@@ -10,6 +10,15 @@ body {
     color: #ffffff;
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     overflow-x: hidden;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
 /* .container {
@@ -23,7 +32,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(15, 15, 35, 0.95);
+    background: rgb(28 34 60);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
@@ -34,15 +43,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 7px 50px;
+}
+
+.nav-container .logo img {
+    width: 10dvw;
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #45b049;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -52,6 +64,12 @@ nav {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 .nav-links a {
@@ -240,7 +258,7 @@ nav {
 .cta-button {
     display: inline-block;
     padding: 15px 35px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #45b049;
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -328,7 +346,7 @@ nav {
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: #45b049;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -494,7 +512,7 @@ nav {
 .submit-btn {
     width: 100%;
     padding: 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #45b049;
     color: white;
     border: none;
     border-radius: 10px;
@@ -612,6 +630,14 @@ footer {
         padding: 12px 28px;
         font-size: 14px;
     }
+    .container {
+        height: 75vh;
+    }
+
+    .card-container {
+        width: 75%;
+        height: 490px;
+    }
 
     .card-content {
         padding: 20px;
@@ -619,5 +645,50 @@ footer {
 
     .card-content h3 {
         font-size: 20px;
+    }
+    .card.next {
+        transform: translateX(30px) scale(0.9) rotateY(-10deg);
+    }
+
+    .card.prev {
+        transform: translateX(-40px) scale(0.9) rotateY(10deg);
+    }
+
+    .card.hidden {
+        transform: translateX(20px) scale(0.8) rotateY(-20deg);
+    }
+    .nav-container .logo img {
+        width: 29dvw;
+        margin-left: -21%;
+    }
+    .menu-toggle {
+        display: block;
+        margin-right: -10%;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .background {
+        width: 92%;
+    }
+    .background::after {
+        width: 92%;
     }
 }
