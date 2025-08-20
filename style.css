@@ -630,10 +630,6 @@ footer {
         padding: 12px 28px;
         font-size: 14px;
     }
-    .container {
-        height: 100vh;
-    }
-
     .card-container {
         width: 75%;
         height: 490px;
