@@ -202,3 +202,33 @@ const navLinks = document.getElementById("nav-links");
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
+
+window.addEventListener('scroll', () => {
+    const aboutSection = document.querySelector('.about');
+    const aboutImage = document.querySelector('.about-visual img');
+
+    if (!aboutSection || !aboutImage) return;
+
+    const sectionTop = aboutSection.offsetTop;
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const scrollSpeed = .5;
+
+    // Change here:
+    const scrollOffset = scrollTop + windowHeight - sectionTop;
+    const positiveScrollOffset = Math.max(scrollOffset, 0);
+
+    if (scrollOffset > 0 && scrollOffset < aboutSection.offsetHeight + windowHeight) {
+        const backgroundOffset = positiveScrollOffset * scrollSpeed;
+        aboutSection.style.backgroundPosition = `center ${-backgroundOffset}px`;
+
+        const scrollPercent = Math.min(1, positiveScrollOffset / aboutSection.offsetHeight);
+        const translateY = scrollPercent * -30;
+        const scale = 1 + scrollPercent * 0.1;
+        aboutImage.style.transform = `translateY(${translateY}px) scale(${scale})`;
+    }
+});
+
+window.dispatchEvent(new Event('scroll'));
+
