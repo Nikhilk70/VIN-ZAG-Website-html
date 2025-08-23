@@ -230,5 +230,57 @@ window.addEventListener('scroll', () => {
     }
 });
 
-window.dispatchEvent(new Event('scroll'));
+let currentSpeed = 1;
+let isPaused = false;
+const track = document.getElementById('postersTrack');
 
+function pauseAnimation() {
+    track.style.animationPlayState = 'paused';
+    isPaused = true;
+}
+
+function playAnimation() {
+    track.style.animationPlayState = 'running';
+    isPaused = false;
+}
+
+function changeSpeed() {
+    if (currentSpeed === 1) {
+        currentSpeed = 2;
+        track.style.animationDuration = '22.5s';
+    } else if (currentSpeed === 2) {
+        currentSpeed = 0.5;
+        track.style.animationDuration = '90s';
+    } else {
+        currentSpeed = 1;
+        track.style.animationDuration = '45s';
+    }
+}
+
+// Add smooth hover effects
+document.querySelectorAll('.poster').forEach(poster => {
+    poster.addEventListener('mouseenter', () => {
+        poster.style.transform = 'translateY(-10px) scale(1.05)';
+    });
+    
+    poster.addEventListener('mouseleave', () => {
+        poster.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+    switch(e.key) {
+        case ' ': // Spacebar
+            e.preventDefault();
+            if (isPaused) {
+                playAnimation();
+            } else {
+                pauseAnimation();
+            }
+            break;
+        case 'ArrowUp':
+            changeSpeed();
+            break;
+    }
+});

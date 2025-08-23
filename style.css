@@ -457,6 +457,137 @@ nav {
     font-size: 15px;
 }
 
+/* All Posters section */
+
+.gallery-container {
+    width: 100%;
+    height: 315px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.posters-track {
+    display: flex;
+    width: calc(300px * 30); /* 15 posters × 2 for seamless loop */
+    height: 100%;
+    animation: slideLeft 45s linear infinite;
+}
+
+.poster {
+    width: 23dvw;
+    height: 34dvh;
+    margin: 25px 25px;
+    background: linear-gradient(145deg, #2d3748, #4a5568);
+    border-radius: 15px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(66, 153, 225, 0.3) 0%, 
+        rgba(159, 122, 234, 0.3) 25%,
+        rgba(236, 72, 153, 0.3) 50%,
+        rgba(251, 146, 60, 0.3) 75%,
+        rgba(34, 197, 94, 0.3) 100%);
+    opacity: 0.6;
+}
+
+.poster-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.poster img {
+    width: 23dvw;
+}
+
+.poster:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.gallery-container:hover .posters-track {
+    animation-play-state: paused;
+}
+
+/* Different gradient colors for each poster */
+.poster:nth-child(1)::before { background: linear-gradient(45deg, rgba(66, 153, 225, 0.4), rgba(147, 197, 253, 0.4)); }
+.poster:nth-child(2)::before { background: linear-gradient(45deg, rgba(159, 122, 234, 0.4), rgba(196, 181, 253, 0.4)); }
+.poster:nth-child(3)::before { background: linear-gradient(45deg, rgba(236, 72, 153, 0.4), rgba(251, 113, 133, 0.4)); }
+.poster:nth-child(4)::before { background: linear-gradient(45deg, rgba(251, 146, 60, 0.4), rgba(253, 186, 116, 0.4)); }
+.poster:nth-child(5)::before { background: linear-gradient(45deg, rgba(34, 197, 94, 0.4), rgba(74, 222, 128, 0.4)); }
+.poster:nth-child(6)::before { background: linear-gradient(45deg, rgba(14, 165, 233, 0.4), rgba(56, 189, 248, 0.4)); }
+.poster:nth-child(7)::before { background: linear-gradient(45deg, rgba(168, 85, 247, 0.4), rgba(196, 181, 253, 0.4)); }
+.poster:nth-child(8)::before { background: linear-gradient(45deg, rgba(239, 68, 68, 0.4), rgba(248, 113, 113, 0.4)); }
+.poster:nth-child(9)::before { background: linear-gradient(45deg, rgba(245, 158, 11, 0.4), rgba(251, 191, 36, 0.4)); }
+.poster:nth-child(10)::before { background: linear-gradient(45deg, rgba(16, 185, 129, 0.4), rgba(52, 211, 153, 0.4)); }
+.poster:nth-child(11)::before { background: linear-gradient(45deg, rgba(99, 102, 241, 0.4), rgba(129, 140, 248, 0.4)); }
+.poster:nth-child(12)::before { background: linear-gradient(45deg, rgba(217, 70, 239, 0.4), rgba(232, 121, 249, 0.4)); }
+.poster:nth-child(13)::before { background: linear-gradient(45deg, rgba(220, 38, 127, 0.4), rgba(236, 72, 153, 0.4)); }
+.poster:nth-child(14)::before { background: linear-gradient(45deg, rgba(132, 204, 22, 0.4), rgba(163, 230, 53, 0.4)); }
+.poster:nth-child(15)::before { background: linear-gradient(45deg, rgba(6, 182, 212, 0.4), rgba(34, 211, 238, 0.4)); }
+
+/* Duplicate posters for seamless loop */
+.poster:nth-child(n+16)::before {
+    background: inherit;
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
 /* About Section */
 .about {
     padding: 50px 50px;
@@ -467,6 +598,13 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+}
+
+.about-text {
+    width: 35dvw;
+}
+.about-visual {
+    width: 50dvw;
 }
 
 .about-text h2 {
@@ -798,4 +936,46 @@ footer {
         align-items: center;
         justify-content: center;
     }
+    .poster {
+        width: 155px;
+        height: 146px;
+        margin: 25px 15px;
+        border-radius: 5px;
+    }
+    .gallery-container {
+        height: 198px;
+    }
+
+    .poster img {
+        width: 40dvw;
+    }
+    
+    .poster-title {
+        font-size: 18px;
+    }
+    
+    .poster-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .gallery-container {
+        border-radius: 0px;
+    }
+    .controls {
+        display: none;
+    }
+
+    .about-text {
+        width: 90dvw;
+    }
+    .about {
+        padding: 45px 19px;
+    }
+
+    .about-visual {
+        height: 27dvh;
+        width: 90dvw;
+    }
+
 }
