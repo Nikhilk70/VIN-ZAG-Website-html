@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scrolling Gallery</title>
+    <link rel="stylesheet" href="D-marketing.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><img src="image/logoWhite.png" alt=""></div>
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<section class="hero-section">
+  <div class="hero-main-image-wrapper">
+    <video class="hero-main-video" autoplay muted loop playsinline>
+      <source src="https://res.cloudinary.com/dxjdraawa/video/upload/D_M_back_video_pxi9as.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Dark overlay -->
+    <div class="overlay"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 class="hero-title">Digital Marketing</h1>
+    <p class="hero-subtitle">Explore powerful digital marketing strategies that get real results</p>
+  </div>
+</section>
+
+
+    <div class="main-container">
+        <section class="content-section section-1" data-section="0">
+            <div class="left-content">
+                <h2 class="content-title">Search Engine Optimization (SEO)</h2>
+                <p class="content-description">Boost your website's visibility and rank higher on search engines. We help you drive organic traffic with proven SEO strategies tailored to your business goals.</p>
+                <ul class="content-features">
+                    <li>Keyword research & optimization</li>
+                    <li>On-page & off-page SEO</li>
+                    <li>Technical SEO audits</li>
+                    <li>Content-driven ranking strategies</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section section-2" data-section="1">
+            <div class="left-content">
+                <h2 class="content-title">Social Media Marketing (SMM)</h2>
+                <p class="content-description">Engage your audience where they spend most of their time. We create and manage impactful social media campaigns that build brand loyalty and drive real results.</p>
+                <ul class="content-features">
+                    <li>Platform-specific strategies (Instagram, Facebook, LinkedIn)</li>
+                    <li>Creative content & design</li>
+                    <li>Audience growth & engagement</li>
+                    <li>Campaign tracking & analytics</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section section-3" data-section="2">
+            <div class="left-content">
+                <h2 class="content-title">Performance Marketing</h2>
+                <p class="content-description">Maximize your ROI with data-driven advertising strategies. From Google Ads to paid social, we deliver measurable growth and high-converting campaigns.</p>
+                <ul class="content-features">
+                    <li>Google Ads & PPC campaigns</li>
+                    <li>Meta & LinkedIn ads</li>
+                    <li>Conversion rate optimization</li>
+                    <li>Real-time performance reporting</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="right-images" id="rightImages">
+        <div class="image-container">
+            <img src="D-Marketing/5-1.jpg" alt="Mountain" class="main-image active" data-image="0">
+            <img src="D-Marketing/7-1.jpg" alt="Forest" class="main-image" data-image="1">
+            <img src="D-Marketing/9-1.jpg" alt="Ocean" class="main-image" data-image="2">
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-dot active" data-section="0"></div>
+        <div class="scroll-dot" data-section="1"></div>
+        <div class="scroll-dot" data-section="2"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Work Together</h2>
+                    <p>Ready to take your digital presence to the next level? Get in touch and let's discuss how we can help your business grow online.</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            hello@digitalpro.com
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📱</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            +1 (555) 123-4567
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-item-icon">⏰</div>
+                        <div>
+                            <strong>Response Time</strong><br>
+                            Within 24 hours
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <input type="text" id="service" name="service" placeholder="e.g., Website Development, SEO, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 VIN ZAG. All rights reserved. | Crafted with ❤️ for your success</p>
+        </div>
+    </footer>
+    <script src="D-marketing.js"></script>
+</body>
+</html>

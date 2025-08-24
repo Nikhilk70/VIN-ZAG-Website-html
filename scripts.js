@@ -284,3 +284,15 @@ document.addEventListener('keydown', (e) => {
             break;
     }
 });
+
+function selectServiceTab(service) {
+    if (service === 'digital-marketing') {
+        window.location.href = "D-marketing.html";
+    } else if (service === 'web-development') {
+        window.location.href = "Web-development.html";
+    } else if (service === 'stationery-design') {
+        window.location.href = "Stationery-design.html";
+    } else if (service === 'cv-creation') {
+        window.location.href = "CV-creation.html";
+    }
+}
