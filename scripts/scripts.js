@@ -289,7 +289,7 @@ function selectServiceTab(service) {
     if (service === 'digital-marketing') {
         showDMarketingSection();
     } else if (service === 'web-development') {
-        window.location.href = "Web-development.html";
+        window.location.href = "D-marketing.html";
     } else if (service === 'stationery-design') {
         showStationarySection();
     } else if (service === 'cv-creation') {
