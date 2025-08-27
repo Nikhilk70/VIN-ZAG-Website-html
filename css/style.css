@@ -73,7 +73,7 @@ nav {
 }
 
 .nav-links a {
-    color: #ffffff;
+    color: #45b049;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -81,7 +81,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #667eea;
+    color: #ffffff;
     transform: translateY(-2px);
 }
 
@@ -92,7 +92,7 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #45b049, #ccffce);
     transition: width 0.3s ease;
 }
 
@@ -273,11 +273,17 @@ nav {
     padding: 0 20px;
 }
 
+
+
 .title h1 {
     font-size: 48px;
     font-weight: 700;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+    background: linear-gradient(135deg, #45b049, #ccffce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1.2;
 }
 
@@ -383,7 +389,7 @@ nav {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 3rem;
-    background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
+    background: linear-gradient(135deg, #45b049, #ccffce);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -611,7 +617,7 @@ nav {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #667eea 100%);
+    background: linear-gradient(135deg, #45b049, #ccffce);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -846,6 +852,21 @@ footer {
     .section-title {
         font-size: 2rem;
         margin-bottom: 0;
+    }
+    .service-tabs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+    }
+    .service-tab {
+        height: 7dvh;
+        width: 43dvw;
+        font-size: 12px;
+        text-align: center;
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .card-container {
         width: 300px;

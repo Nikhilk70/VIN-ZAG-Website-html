@@ -287,7 +287,7 @@ document.addEventListener('keydown', (e) => {
 
 function selectServiceTab(service) {
     if (service === 'digital-marketing') {
-        window.location.href = "D-marketing.html";
+        showDMarketingSection();
     } else if (service === 'web-development') {
         window.location.href = "Web-development.html";
     } else if (service === 'stationery-design') {
@@ -299,6 +299,7 @@ function selectServiceTab(service) {
 
 function showHome() {
     document.getElementById("cv-details-section").style.display = "none";
+    document.getElementById("d-Marketing-details-section").style.display = "none";
     document.getElementById("stationary-details-section").style.display = "none";
     document.getElementById("main-hero-container").style.display = "";
     document.getElementById("home-sections").style.display = "";
@@ -310,8 +311,25 @@ function showHome() {
         behavior: "smooth"
     });
 }
+
+function showDMarketingSection() {
+    document.getElementById("d-Marketing-details-section").style.display = "";
+    document.getElementById("cv-details-section").style.display = "none";
+    document.getElementById("stationary-details-section").style.display = "none";
+    document.getElementById("main-hero-container").style.display = "none";
+    document.getElementById("home-sections").style.display = "none";
+    document.getElementById("services").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("all-posters").style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 function showCvSection() {
     document.getElementById("cv-details-section").style.display = "";
+    document.getElementById("d-Marketing-details-section").style.display = "none";
     document.getElementById("stationary-details-section").style.display = "none";
     document.getElementById("main-hero-container").style.display = "none";
     document.getElementById("home-sections").style.display = "none";
@@ -325,6 +343,7 @@ function showCvSection() {
 }
 function showStationarySection() {
     document.getElementById("stationary-details-section").style.display = "";
+    document.getElementById("d-Marketing-details-section").style.display = "none";
     document.getElementById("cv-details-section").style.display = "none";
     document.getElementById("main-hero-container").style.display = "none";
     document.getElementById("home-sections").style.display = "none";
