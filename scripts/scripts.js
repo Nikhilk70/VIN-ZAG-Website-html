@@ -291,8 +291,48 @@ function selectServiceTab(service) {
     } else if (service === 'web-development') {
         window.location.href = "Web-development.html";
     } else if (service === 'stationery-design') {
-        window.location.href = "Stationery-design.html";
+        showStationarySection();
     } else if (service === 'cv-creation') {
-        window.location.href = "CV-creation.html";
+        showCvSection();
     }
+}
+
+function showHome() {
+    document.getElementById("cv-details-section").style.display = "none";
+    document.getElementById("stationary-details-section").style.display = "none";
+    document.getElementById("main-hero-container").style.display = "";
+    document.getElementById("home-sections").style.display = "";
+    document.getElementById("services").style.display = "";
+    document.getElementById("about").style.display = "";
+    document.getElementById("all-posters").style.display = "";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+function showCvSection() {
+    document.getElementById("cv-details-section").style.display = "";
+    document.getElementById("stationary-details-section").style.display = "none";
+    document.getElementById("main-hero-container").style.display = "none";
+    document.getElementById("home-sections").style.display = "none";
+    document.getElementById("services").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("all-posters").style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+function showStationarySection() {
+    document.getElementById("stationary-details-section").style.display = "";
+    document.getElementById("cv-details-section").style.display = "none";
+    document.getElementById("main-hero-container").style.display = "none";
+    document.getElementById("home-sections").style.display = "none";
+    document.getElementById("services").style.display = "none";
+    document.getElementById("about").style.display = "none";
+    document.getElementById("all-posters").style.display = "none";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }

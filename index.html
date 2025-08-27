@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIN ZAG Creative Services - Full-Service Web Development & Marketing</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cv.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -15,7 +16,7 @@
                 ☰
             </div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#" onclick="showHome()">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -24,7 +25,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="container">
+    <div class="container" id="main-hero-container">
         <div class="background" id="background"></div>
         <div class="card-container" id="cardContainer">
             <div class="card active" data-bg="image/newfont1.jpg">
@@ -69,8 +70,7 @@
     </div>
 
     <!-- home sections -->
-
-    <div class="title">
+    <div class="title" id="home-sections">
         <h1>Digital and Creative Solutions That Drive Results</h1>
         <p>Full-service web development, design, and digital marketing solutions to elevate your business to the next level</p>
         <a href="#contact" class="cta-button">Start Your Project</a>
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card" onclick="selectServiceTab('digital-marketing')">
                     <div class="service-icon">📱</div>
                     <h3>Digital Marketing</h3>
                     <p>Boost your brand's online presence with powerful digital marketing strategies, tailored campaigns, and data-driven results to reach your audience effectively.</p>
@@ -107,13 +107,13 @@
                     <p>Create fast, responsive, and user-friendly websites tailored to your brand with modern web technologies and seamless user experiences.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="selectServiceTab('stationery-design')">
                     <div class="service-icon">📄</div>
                     <h3>Stationery Design</h3>
                     <p>Make a lasting impression with custom-designed stationery that reflects your brand's identity—elegant, professional, and cohesive across every detail.</p>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card" onclick="selectServiceTab('cv-creation')">
                     <div class="service-icon">📋</div>
                     <h3>CV Creation</h3>
                     <p>Stand out to employers with a professionally crafted CV that highlights your strengths, showcases your experience, and reflects your personal brand.</p>
@@ -134,7 +134,7 @@
         </div>
     </section>
 
-    <section class="all-posters">
+    <section class="all-posters" id="all-posters">
         <div class="gallery-container">
             <div class="controls">
                 <button class="control-btn" onclick="pauseAnimation()">⏸️ Pause</button>
@@ -332,6 +332,158 @@
         </div>
     </section>
 
+    <!-- CV Details Section -->
+    <section class="cv-details-section" id="cv-details-section" style="display: none;">
+        <!-- CV Hero Section -->
+        <section class="cv-hero">
+            <div class="cv-hero-image">
+                <img src="https://images.pexels.com/photos/5673488/pexels-photo-5673488.jpeg?_gl=1*68o21f*_ga*MzQ2MDgxOTM0LjE3NTYyMzQyMTc.*_ga_8JE65Q40S6*czE3NTYyMzQyMTckbzEkZzEkdDE3NTYyMzQyNjQkajEzJGwwJGgw" alt="">
+            </div>
+            <div class="cv-hero-content">
+                <h1>VIN SAG Resume & CV Services</h1>
+                <p>Crafting professional resumes, modern CVs, and tailored cover letters that help you stand out and land your dream job.</p>
+                <a href="#services" class="cta-button">Get Started Today</a>
+            </div>
+        </section>
+
+        <!-- CV Section 1: Professional Resume Writing -->
+        <section class="cv-section animate-on-scroll" id="services">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Professional Resume Writing</h2>
+                    <p>Stand out from the crowd with a resume tailored to highlight your skills, achievements, and career goals. We craft professional, ATS-friendly resumes that grab the attention of recruiters and hiring managers.</p>
+                    <p>Whether you are a fresher or an experienced professional, our resumes are designed to showcase your strengths and present you as the perfect fit for your dream role.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="cv/1.jpg" alt="Professional Resume Writing">
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section 2: CV Design & Formatting -->
+        <section class="cv-section animate-on-scroll">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Creative CV Design & Formatting</h2>
+                    <p>First impressions matter. Our CV designs combine clean layouts, modern templates, and impactful formatting that reflect your personal brand while maintaining professionalism.</p>
+                    <p>With well-structured sections, visually appealing design, and attention to detail, we ensure your CV communicates both clarity and confidence to employers.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="cv/2.jpg" alt="Creative CV Design and Formatting">
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section 3: Career-Focused Cover Letters -->
+        <section class="cv-section animate-on-scroll" id="services">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Career-Focused Cover Letters</h2>
+                    <p>A strong cover letter can make all the difference. We craft personalized, career-focused cover letters that connect your skills and achievements directly to the role you’re applying for.</p>
+                    <p>Each cover letter is tailored to highlight your unique value and showcase why you are the ideal candidate for the position.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="cv/3.jpg" alt="Career-Focused Cover Letter Writing">
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <div class="cv-features">
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">📝</div>
+                <h3>Professional Resumes</h3>
+                <p>Crafted resumes that highlight your skills, achievements, and career goals to impress recruiters instantly.</p>
+            </div>
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">🎨</div>
+                <h3>Modern CV Designs</h3>
+                <p>Clean and creative CV layouts designed to stand out while maintaining professionalism and clarity.</p>
+            </div>
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">📄</div>
+                <h3>Tailored Cover Letters</h3>
+                <p>Customized cover letters that connect your expertise directly to the role, making applications more impactful.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stationary Details Section -->
+    <section class="stationary-details-section" id="stationary-details-section" style="display: none;">
+        <!-- CV Hero Section -->
+        <section class="cv-hero">
+            <div class="cv-hero-image">
+                <img src="https://images.pexels.com/photos/3826649/pexels-photo-3826649.jpeg?_gl=1*13yul2i*_ga*MzQ2MDgxOTM0LjE3NTYyMzQyMTc.*_ga_8JE65Q40S6*czE3NTYyNzg1MTAkbzMkZzEkdDE3NTYyNzg2ODIkajYwJGwwJGgw" alt="">
+            </div>
+            <div class="cv-hero-content">
+                <h1>VIN SAG Stationery Design Services</h1>
+                <p>We create elegant and professional stationery designs including business cards, letterheads, envelopes, and more to strengthen your brand identity.</p>
+                <a href="#services" class="cta-button">Explore Our Designs</a>
+            </div>
+        </section>
+
+        <!-- Stationery Section 1: Business Cards -->
+        <section class="cv-section animate-on-scroll" id="services">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Custom Business Card Designs</h2>
+                    <p>Make lasting first impressions with unique and professional business card designs that reflect your brand identity.</p>
+                    <p>From minimal and modern to creative and bold styles, we design cards that stand out and leave a professional impact.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="stationary/NEW1.jpg" alt="Business Card Design">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stationery Section 2: Letterheads & Envelopes -->
+        <section class="cv-section animate-on-scroll">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Letterheads & Envelopes</h2>
+                    <p>Give your official communication a professional edge with beautifully designed letterheads and matching envelopes.</p>
+                    <p>Our stationery designs reinforce your brand identity in every piece of correspondence, ensuring consistency and trust.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="stationary/NEW2.jpg" alt="Letterheads and Envelopes Design">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stationery Section 3: Complete Stationery Sets -->
+        <section class="cv-section animate-on-scroll" id="services">
+            <div class="cv-section-content">
+                <div class="cv-text-content">
+                    <h2>Complete Stationery Sets</h2>
+                    <p>Enhance your brand presence with a complete stationery package including business cards, letterheads, notepads, folders, and more.</p>
+                    <p>We design cohesive stationery sets that ensure your brand looks professional, consistent, and memorable in every interaction.</p>
+                </div>
+                <div class="cv-image-container">
+                    <img src="stationary/NEW.jpg" alt="Complete Stationery Design Set">
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <div class="cv-features">
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">✏️</div>
+                <h3>Custom Letterheads</h3>
+                <p>Professionally designed letterheads that reflect your brand identity and add a polished touch to your business communication.</p>
+            </div>
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">📇</div>
+                <h3>Business Cards</h3>
+                <p>Creative and modern business card designs that leave a lasting impression on clients and partners.</p>
+            </div>
+            <div class="cv-feature-card">
+                <div class="cv-feature-icon">📑</div>
+                <h3>Brochures & Flyers</h3>
+                <p>Eye-catching brochures and flyers designed to effectively showcase your products, services, and brand story.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="contact-container">
@@ -398,6 +550,7 @@
             <p>&copy; 2025 VIN ZAG. All rights reserved. | Crafted with ❤️ for your success</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/cv.js"></script>
 </body>
 </html>
