@@ -100,6 +100,51 @@ nav {
     width: 100%;
 }
 
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.social-icons a {
+    color: #45b049;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    background: rgba(69, 176, 73, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: rgba(69, 176, 73, 0.2);
+    box-shadow: 0 5px 15px rgba(69, 176, 73, 0.3);
+}
+
+.social-icons a.whatsapp:hover {
+    color: #25D366;
+    background: rgba(37, 211, 102, 0.2);
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.social-icons a.instagram:hover {
+    color: #E4405F;
+    background: rgba(228, 64, 95, 0.2);
+    box-shadow: 0 5px 15px rgba(228, 64, 95, 0.3);
+}
+
+.social-icons a.facebook:hover {
+    color: #1877F2;
+    background: rgba(24, 119, 242, 0.2);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+}
+
 .container {
     position: relative;
     height: 120vh;
@@ -740,18 +785,50 @@ nav {
     color: #ffffff;
     font-size: 1rem;
     transition: all 0.3s ease;
+    box-sizing: border-box; /* Ensure proper sizing */
+    font-family: inherit; /* Inherit font family */
+    line-height: 1.4; /* Better text spacing */
+    word-spacing: normal; /* Ensure normal word spacing */
+    letter-spacing: normal; /* Ensure normal letter spacing */
+}
+
+/* Remove any text transformation that might interfere */
+.form-group input,
+.form-group textarea {
+    text-transform: none;
+    white-space: pre-wrap; /* Preserve spaces and allow wrapping */
+    word-break: normal; /* Don't break words unnecessarily */
+    overflow-wrap: normal; /* Normal text wrapping */
+}
+
+/* Specific fixes for input fields */
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    white-space: nowrap; /* Single line inputs */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long text */
+}
+
+/* Specific fixes for textarea */
+.form-group textarea {
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+    overflow-wrap: break-word; /* Break long words if needed */
+    resize: vertical; /* Allow vertical resize only */
+    min-height: 120px; /* Minimum height */
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #45b049;
+    box-shadow: 0 0 0 3px rgba(69, 176, 73, 0.1);
 }
 
-.form-group textarea {
-    height: 120px;
-    resize: vertical;
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1; /* Firefox fix */
 }
 
 .submit-btn {
@@ -769,7 +846,8 @@ nav {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(69, 176, 73, 0.3);
+    background: #3a9a3e;
 }
 
 /* Footer */

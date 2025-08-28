@@ -20,28 +20,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Form submission
-function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
-    
-    // Simulate form submission
-    const submitBtn = form.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Sending...';
-    submitBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
-    
-    setTimeout(() => {
-        submitBtn.textContent = 'Message Sent!';
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = '#45b049';
-            form.reset();
-        }, 2000);
-    }, 1500);
-}
 
 // Animate elements on scroll
 const observerOptions = {
@@ -355,3 +333,44 @@ function showStationarySection() {
         behavior: "smooth"
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('input, textarea');
+    
+    inputs.forEach(input => {
+        // Log when space is pressed
+        input.addEventListener('keydown', function(e) {
+            if (e.key === ' ' || e.keyCode === 32) {
+                console.log('Space key pressed in:', this.name || this.id);
+            }
+        });
+
+        // Log input changes
+        input.addEventListener('input', function(e) {
+            console.log('Input value changed:', this.value);
+        });
+
+        // Prevent any potential preventDefault on space key
+        input.addEventListener('keydown', function(e) {
+            if (e.key === ' ' || e.keyCode === 32) {
+                // Ensure space key is not prevented
+                e.stopPropagation();
+            }
+        });
+    });
+
+    console.log('Form debugging initialized. Check console when typing spaces.');
+});
+
+// Additional check for any global event listeners that might interfere
+document.addEventListener('keydown', function(e) {
+    if (e.key === ' ' || e.keyCode === 32) {
+        const activeElement = document.activeElement;
+        if (activeElement && (activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA')) {
+            console.log('Space pressed while input/textarea is focused');
+            // Ensure the event is not prevented
+            e.stopPropagation();
+        }
+    }
+});

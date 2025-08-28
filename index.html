@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIN ZAG Creative Services - Full-Service Web Development & Marketing</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/cv.css">
 </head>
 <body>
@@ -20,6 +21,14 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="https://wa.me/918714812403?text=Hello%20I%20am%20interested%20in%20your%20services" 
+                        class="whatsapp" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a></li>
+                <li><a href="https://instagram.com/your-username" class="instagram" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://facebook.com/your-page" class="facebook" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-f"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -45,7 +54,7 @@
             </div>
 
             <div class="card hidden" data-bg="image/newfont3.jpg">
-                <img src="image/newfont3.jpg">
+                <img src="image/newfont4.jpg">
                 <div class="card-content">
                     <h3>Stationery Design</h3>
                     <p>Make a lasting impression with custom-designed stationery that reflects your brand’s identity—elegant, professional, and cohesive across every detail.</p>
@@ -53,7 +62,7 @@
             </div>
 
             <div class="card hidden" data-bg="image/newfont4.jpg">
-                <img src="image/newfont4.jpg">
+                <img src="image/newfont3.jpg">
                 <div class="card-content">
                     <h3>CV Creations</h3>
                     <p>Stand out to employers with a professionally crafted CV that highlights your strengths, showcases your experience, and reflects your personal brand.</p>
@@ -576,12 +585,25 @@
                 <div class="contact-info">
                     <h2>Let's Work Together</h2>
                     <p>Ready to take your digital presence to the next level? Get in touch and let's discuss how we can help your business grow online.</p>
+
+                    <div class="social-icons">
+                        <a href="https://wa.me/918714812403?text=Hello%20I%20am%20interested%20in%20your%20services" 
+                        class="whatsapp" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/vin_zag_?igsh=MTl0cjJ4OTQ0MmVsNA%3D%3D&utm_source=qr" class="instagram" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/p/1A4YteCuRi/?mibextid=wwXIfr" class="facebook" target="_blank" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
                     
                     <div class="contact-item">
                         <div class="contact-item-icon">📧</div>
                         <div>
                             <strong>Email</strong><br>
-                            hello@digitalpro.com
+                            vinzagcreativeservice@gmail.com
                         </div>
                     </div>
                     
@@ -589,7 +611,7 @@
                         <div class="contact-item-icon">📱</div>
                         <div>
                             <strong>Phone</strong><br>
-                            +1 (555) 123-4567
+                            +91 87148 12403
                         </div>
                     </div>
                     
@@ -602,7 +624,11 @@
                     </div>
                 </div>
                 
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <form class="contact-form" action="https://formsubmit.co/vinzagcreativeservice@gmail.com" method="POST">
+                    <!-- Hidden inputs for FormSubmit configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -620,7 +646,7 @@
                     
                     <div class="form-group">
                         <label for="message">Project Details</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your project requirements..."></textarea>
+                        <textarea id="message" name="message" placeholder="Tell us about your project requirements..." rows="5"></textarea>
                     </div>
                     
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -637,5 +663,6 @@
     </footer>
     <script src="scripts/scripts.js"></script>
     <script src="scripts/cv.js"></script>
+
 </body>
 </html>
