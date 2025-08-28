@@ -28,15 +28,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Video play simulation
-document.querySelectorAll('.video-placeholder').forEach(video => {
-    video.addEventListener('click', function() {
-        this.innerHTML = '<div style="color: white; font-size: 1.2rem;">Video Playing... 🎬</div>';
-        setTimeout(() => {
-            this.innerHTML = '<div class="play-button">▶</div>';
-        }, 3000);
-    });
-});
 
 // Add some interactive hover effects
 document.querySelectorAll('.service-card, .photo-container, .video-container').forEach(card => {
